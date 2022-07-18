@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,500;1,600&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Bodoni:ital,wght@1,400;1,500&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            toggle = 0 
+            $('#header2_box>img').click(function(){
+                if( toggle==0 ){
+                    toggle=1;
+                    $('#search_box').animate({'top':'140px'},100)
+                    $('#header2_box>img').attr({'src':'icons/search_close.png'})
+                    $('#search_box').slideDown()
+                }
+                else if( toggle==1){
+                    toggle=0;
+                    $('#search_box').animate({'top':'140px'},100)
+                    $('#header2_box>img').attr({'src':'icons/ico_search.png'})
+                    $('#search_box').slideUp()
+                }
+             })
+            toggle_a = 0
+            $('#header1_box ul li:last-child').click(function(){
+                if(toggle_a==0 ){
+                    toggle_a=1;
+                    $('#header1_box ul li img').attr({'src':'icons/slide1.png'})
+                    $('#header_side').animate({'top':'0'},100)
+                    $('#header_side').slideDown()
+                }
+                else if( toggle_a==1){
+                    toggle_a = 0;
+                    $('#header1_box ul li img').attr({'src':'icons/ico_user_info_line.png'})
+                    $('#header_side').animate({'top':'-120px'},100)
+                    $('#header_side').hide()
+                }
+            })
+
+           
+        })
+    </script>
+    <style>
+        * {margin: 0; padding: 0; list-style: none; font-family: 'Noto Sans KR', sans-serif; }
+        #header_side { width: 100%; height: 120px; background-color: #2f1c11; position: relative; left: 0; top: -120px; display: none;}
+        #header_side h2 { color: #fff; line-height: 120px; font-size: 20px; margin-left: 350px; font-weight: 300; }
+        #header_side span { color: #ffaf24;}
+        #header_side button { width: 172px; height: 35px;}
+        #login { position: absolute; right: 540px; top: 0; bottom: 0; margin: auto; background-color: #fff; color: #000; border: none;}
+        #join { position: absolute; right: 350px; top: 0; bottom: 0; margin: auto; background-color: transparent; color: #fff; border: 1px solid #fff;}
+
+        header { position: fixed; left: 0; top: 0; width: 100%; z-index: 9; }
+        #header1 { width: 100%; height: 40px; background-color: #eee; line-height: 40px;}
+        #header2 { width: 100%; height: 100px; background-color: #fff; z-index: 999;}
+        #header1_box { width: 1210px; height: 40px;  margin:auto;}
+        #header2_box { width: 1210px; height: 100px; margin:auto; z-index: 9999;}
+        #header1_box ul { display: inline-block; float: right; } 
+        #header1_box ul li { float: left; margin-left: 20px; color: rgb(68, 68, 68); font-size: 13px;}
+        #header1_box ul li:first-child {border-right: 1px solid rgb(213, 213, 213); padding-right: 15px;}
+        #header1_box ul li:last-child {width: 60px; height: 40px; background: #2f1c11 }
+        #header1_box ul li img { padding-left: 18px; vertical-align: middle;}
+        #header2_box>#logo { width: 100px; height: 100px; float: left; line-height: 100px;}
+        #header2_box>#logo>img {vertical-align: middle; margin-top: -8px;}
+        #header2_box>#menu { width: 950px; height: 100px;  float: left; margin-left: 50px; text-align: center;}
+        #header2_box>#menu>li { display: inline-block;  margin: 0 20px; line-height: 100px; font-size: 14px; font-weight: 600; color: #000; }
+        #header2_box>#menu>li:hover { color: #d4641a; cursor: pointer;}
+        #header2_box>img { width: 20px; height: 20px;  float: right; margin-top: 40px; cursor: pointer;}
+
+        #search_box { width: 1260px; height: 80px; margin: auto; background-color: #eeeeee; position: absolute; top: 140px; left: 0; right: 0; margin: auto; display: none; } 
+        #search_box p { text-align: center; line-height: 80px;}
+        #search_box img { position: absolute; right: 23px; top: 0; bottom: 0; margin: auto;}
+
+        #main_side { width: 100%; height: 700px; background: url(images/mainslide_pc.jpg) center no-repeat; margin-top: 140px;}
+        #banner { width: 100%; height: 400px; background : url(images/배너_2_6.jpg) center no-repeat;}
+        #md_pick { width: 1000px; height: 600px;  margin: auto; }
+        #md_pick>h2 { width: 1000px; height: 135px; line-height: 135px; text-align: center; color: #d4641a; font-size: 22px; }
+        #md_pick>ul { }
+        #md_pick>ul>li { width: 240px; height: 370px; float: left; margin: 5px; text-align: center; }
+        #md_pick>ul>li>img { width: 100%;}
+        #md_pick>ul>li>h3 { font-size: 14px; font-weight: 600; margin-top: 10px;}
+        #md_pick>ul>li>h4 { font-size: 12px; font-weight: 400; color: rgb(30, 30, 30); margin-top: 10px; }
+        #md_pick>ul>li>h5 { color: #d4641a; margin-top: 10px; }
+        #md_pick_bt { width: 160px; height: 40px;  margin: 20px auto; }
+        #md_pick_bt>li:nth-child(1) { width: 60px; height: 40px; float: left; border-right: 1px solid rgb(118, 118, 118); box-sizing: border-box; text-align: center; line-height: 40px; cursor: pointer;}
+        #md_pick_bt>li:nth-child(2) { width: 100px; height: 40px; float: right; box-sizing: border-box; text-align: center; line-height: 40px; cursor: pointer;}
+        #what_new { width: 1236px; height: 780px; margin: auto;}
+        #what_new>h2 {width: 1236px; height: 100px; line-height: 100px; text-align: center; color: #d4641a; font-size: 22px; }
+        #what_new>ul>li {width: 380px; height: 580px; margin: 16px; text-align: center;  float: left;}
+        #what_new>ul>li>img {width:100%}
+        #what_new>ul>li>h4 { font-size: 16px; font-weight: 500; color: #d4641a; margin-top: 10px;}
+        #what_new_bt { width: 160px; height: 40px; margin: 20px auto;}
+        #what_new_bt>li:nth-child(1) { width: 60px; height: 40px; float: left; border-right: 1px solid rgb(118, 118, 118); box-sizing: border-box; text-align: center; line-height: 40px; cursor: pointer;}
+        #what_new_bt>li:nth-child(2) { width: 100px; height: 40px; float: right; box-sizing: border-box; text-align: center; line-height: 40px; cursor: pointer;}
+        #bt { width: 100%; height: 620px; background-color:#7c51a1; margin-top: 30px;  text-align: center;}
+        #bt h3 { text-align: center; color: #fff; line-height: 80px; padding-top: 15px; font-size: 20px; font-weight: 400;}
+        #bt ul { width:1200px; height: 400px; margin: auto; }
+        #bt button { width: 400px; height: 40px; background-color: #f38200; color: #fff; margin-top: 30px; border:none;}
+        #bt ul li { width: 200px; height: 200px; float: left; overflow: hidden;}
+        #bt ul li img { width: 100%; transition:transform 0.5s; }
+        #bt ul li img:hover { transform: scale(1.1); cursor: pointer; opacity: 0.7;}
+        #btn_top { position: fixed; right: 30px; bottom: 50px;}
+        footer {width: 100%; height: 480px; background-color: #ccc;}
+        /* 기본배열에서 옆으로 배열하는 코드는 둘중에 하나 왼쪽이나 오른쪽으로 치우치게 배열할 경우 간격을 1px까지 정확하게 밀림없이 배열해야할 경우 float / d:ib 요소에 d:ib을 적용하고 부모에 ta:c를 적용해서 옆으로 배열된 요소들이 가운데 정렬된 상태를 원한다면 d:ib*/
+        #footer_text { width: 1100px; height: 250px; margin: auto; background-color: #f38200; text-align: center;}
+        #footer_text ul { display: inline-block; background-color: wheat;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header_side">
+            <h2><span>로그인</span>을 하시면 커피빈 멤버스 클럽의 <span>다양한혜택</span>을 받으실 수 있습니다.</h2>
+            <button id="login">로그인</button>
+            <button id="join">회원가입</button>
+        </div>
+        <div id="header1">
+            <div id="header1_box">
+                <ul>
+                    <li>로그인</li>
+                    <li>매장찾기</li>
+                    <li>채용정보</li>
+                    <li>단체 및 기업구매</li>
+                    <li>고객서비스</li>
+                    <li><img src="icons/ico_user_info_line.png" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div id="header2">
+            <div id="header2_box">
+                    <h1 id="logo"><img src="logo_new.jpg" alt=""></h1>
+                    <ul id="menu">
+                        <li>BUY ONLINE</li>
+                        <li>MEMBER'S CLUB</li>
+                        <li>MENU</li>
+                        <li>STORE & 서비스</li>
+                        <li>THE COFFEE BEAN </li>
+                        <li>CBTL</li>
+                    </ul>
+                    <img src="icons/ico_search.png" alt="">
+            </div>
+            <div id="search_box">
+                <p>검색어를 입력하세요.</p>
+                <img src="icons/ico_search.png" alt="">
+            </div>
+        </div>
+
+    </header>
+    <!-- main슬라이드 영역 시작 -->
+    <aside>
+        <div id="main_side"> </div>
+        <div id="banner"> </div>
+    </aside>
+
+    <!-- 상품 영역 시작-->
+     <div id="md_pick">
+         <h2>MD'S PICK</h2>
+          <ul>
+            <li>
+              <img src="images/11110041.jpg" alt=""> 
+              <h3>커피빈 잉글리쉬 브렉퍼스트라떼 파우치(10개입)</h3>
+              <h4>♥신제품 출시♥</h4>
+              <h5>15,000원</h5> 
+            </li>
+            <li>
+              <img src="images/11110042.jpg" alt="">
+              <h3>커피빈 바닐라 라떼 파우치(10개입)</h3>
+              <h4>♥신제품 출시♥</h4>
+              <h5>15,000원</h5>
+            </li>
+            <li>
+              <img src="images/12600031.jpg" alt="">
+              <h3>아이스박스(크림옐로우) 5.5L</h3>
+              <h5>25,900원</h5>
+            </li>
+            <li>
+              <img src="images/12600032.jpg" alt="">
+              <h3>아이스박스(소프트퍼플) 5.5L</h3>
+              <h5>25,900원</h5>
+            </li>
+            
+          </ul>
+     </div>
+        <ul id="md_pick_bt">
+          <li><img src="icons/btn_pause.png" alt=""></li>
+          <li><img src="icons/paging_on.png" alt=""> <img src="icons/paging_on_popup.png" alt=""></li>
+       </ul>
+       <div id="what_new">
+           <h2>What's_new</h2>
+           <ul>
+               <li>
+                   <img src="images/PC_B_325.jpg" alt="">
+                   <h4>2022 05 coffebean whole cake </h4>
+               </li>
+               <li>
+                    <img src="images/PC_B_328.jpg" alt="">
+                    <h4>2022 04 For your Balance in Coffeebean</h4>
+               </li>
+               <li>
+                <img src="images/PC_B_331.jpg" alt="">
+                <h4>2022 05 Fresh Milk Honey Cake & White Cheese Mousse Cake</h4>
+           </li>
+           </ul>
+       </div>
+           <ul id="what_new_bt">
+            <li><img src="icons/btn_pause.png" alt=""></li>
+            <li><img src="icons/paging_on.png" alt=""> <img src="icons/paging_on_popup.png" alt=""> <img src="icons/paging_on_popup.png" alt=""> <img src="icons/paging_on_popup.png" alt=""></li>
+        </ul>
+        <div id="bt">
+            <h3>#커피빈코리아 #커피빈맛있다 #커피빈사랑해</h3>
+            <ul>
+                <li><img src="images/283966329_387615509962563_7692700140429120786_n.jpg" alt=""></li>
+                <li><img src="images/283752057_582630459724358_4312059641155942658_n.jpg" alt=""></li>
+                <li><img src="images/283561880_170947705387047_2120775071085621613_n.jpg" alt=""></li>
+                <li><img src="images/283339436_1042508103055081_6793947673784210074_n.jpg" alt=""></li>
+                <li><img src="images/283221127_1318835175293753_8018835075016122412_n.jpg" alt=""></li>
+                <li><img src="images/283126672_748604046155652_2640604889730497187_n.jpg" alt=""></li>
+                <li><img src="images/282562280_344336334458606_3758809074432806601_n.jpg" alt=""></li>
+                <li><img src="images/282357511_738398404004967_6762514912994099450_n.jpg" alt=""></li>
+                <li><img src="images/281613025_4650620795038237_5644265217995148041_n.jpg" alt=""></li>
+                <li><img src="images/281637070_1350582952131906_6203516431450384985_n.jpg" alt=""></li>
+                <li><img src="images/283088151_2282691121873517_1664101967080824530_n.jpg" alt=""></li>
+                <li><img src="images/281585290_346181230946742_8347622403146270339_n.jpg" alt=""></li>
+            </ul>
+            <button>OUR INSTAGRAM - @COFFEEBEAN_KR</button>
+        </div>
+
+        <!-- -->
+        <img src="icons/btn_top.png" alt="" id="btn_top">
+        <footer>
+            <div id="footer_text">
+                <ul>
+                    <li>Buy Online</li>
+                </ul>
+                <ul>
+                    <li>Member`s Club</li>
+                </ul>
+                <ul>
+                    <li>Menu</li>
+                </ul>
+                <ul>
+                    <li>Store & 서비스</li>
+                </ul>
+                <ul>
+                    <li>The Coffee Bean</li>
+                </ul>
+                <ul>
+                    <li>CBTL</li>
+                </ul>
+            </div>
+        </footer>
+</body>
+</html>
